@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bedankt voor je aanmelding – BUITEN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:   #050508;
+      --navy:    #080C18;
+      --white:   #F5F5F0;
+      --dim:     rgba(245,245,240,0.7);
+      --faint:   rgba(245,245,240,0.35);
+      --accent:  #DAFF0F;
+      --border:  #1E2A45;
+      --font:    Arial, 'Helvetica Neue', Helvetica, sans-serif;
+      --display: 'Bebas Neue', sans-serif;
+    }
+
+    html { font-size: 16px; }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: var(--font);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── Achtergrond poster ─────────────────── */
+    .bg {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+    }
+    .bg__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      opacity: 0.18;
+      filter: blur(4px) grayscale(30%);
+    }
+    .bg__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(5,5,8,0.7) 0%,
+        rgba(5,5,8,0.85) 60%,
+        rgba(5,5,8,1) 100%
+      );
+    }
+
+    /* ─── Nav ────────────────────────────────── */
+    nav {
+      position: relative;
+      z-index: 2;
+      padding: 1.4rem 1.5rem;
+      display: flex;
+      justify-content: center;
+    }
+    .nav-logo {
+      font-family: var(--display);
+      font-size: 2rem;
+      letter-spacing: 0.18em;
+      color: var(--white);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .nav-logo:hover { color: var(--accent); }
+
+    /* ─── Main content ───────────────────────── */
+    main {
+      position: relative;
+      z-index: 2;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 1.5rem 5rem;
+    }
+
+    .card {
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+      animation: fadeUp 0.9s ease forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Check icoon */
+    .check-ring {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 2px solid var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 2rem;
+      animation: ringPop 0.6s ease 0.4s both;
+    }
+
+    @keyframes ringPop {
+      from { transform: scale(0.5); opacity: 0; }
+      to   { transform: scale(1);   opacity: 1; }
+    }
+
+    .check-ring i {
+      font-size: 2rem;
+      color: var(--accent);
+    }
+
+    /* Label */
+    .thanks-label {
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.8rem;
+    }
+
+    /* Titel */
+    .thanks-title {
+      font-family: var(--display);
+      font-size: clamp(3rem, 12vw, 6rem);
+      line-height: 0.92;
+      letter-spacing: 0.05em;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+
+    /* Subtitel */
+    .thanks-sub {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+
+    /* Tekst */
+    .thanks-text {
+      font-size: 0.92rem;
+      font-weight: 400;
+      color: var(--dim);
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+    }
+
+    /* Divider */
+    .divider {
+      width: 50px;
+      height: 2px;
+      background: var(--accent);
+      margin: 0 auto 2.5rem;
+    }
+
+    /* Info blokjes */
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 3rem;
+      text-align: left;
+    }
+
+    .info-item {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      padding: 1.1rem 1.2rem;
+      transition: border-color 0.3s ease;
+    }
+    .info-item:hover { border-color: rgba(218,255,15,0.3); }
+
+    .info-item i {
+      font-size: 0.85rem;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .info-item-title {
+      font-size: 0.7rem;
+      font-weight: 900;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--dim);
+      margin-bottom: 0.3rem;
+    }
+
+    .info-item-value {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.4;
+    }
+
+    /* Knoppen */
+    .btn-group {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.9rem 2.2rem;
+      font-family: var(--font);
+      font-size: 0.8rem;
+      font-weight: 900;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn--primary {
+      background: var(--accent);
+      color: var(--black);
+    }
+    .btn--primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(218,255,15,0.35);
+    }
+
+    .btn--ghost {
+      background: transparent;
+      color: var(--white);
+      border: 1.5px solid rgba(245,245,240,0.3);
+    }
+    .btn--ghost:hover {
+      border-color: var(--white);
+      background: rgba(245,245,240,0.07);
+    }
+
+    /* ─── Footer ─────────────────────────────── */
+    footer {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 2rem 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    footer p {
+      font-size: 0.72rem;
+      color: var(--faint);
+      letter-spacing: 0.08em;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    /* ─── Mobiel ─────────────────────────────── */
+    @media (max-width: 500px) {
+      .info-grid { grid-template-columns: 1fr; }
+      .btn-group { flex-direction: column; align-items: center; }
+      .btn { width: 100%; max-width: 280px; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Achtergrond -->
+  <div class="bg">
+    <img src="images/poster.jpg" alt="" class="bg__img" aria-hidden="true" />
+    <div class="bg__overlay"></div>
+  </div>
+
+  <!-- Nav -->
+  <nav>
+    <a href="index.html" class="nav-logo">BUITEN</a>
+  </nav>
+
+  <!-- Content -->
+  <main>
+    <div class="card">
+
+      <div class="check-ring">
+        <i class="fa-solid fa-check"></i>
+      </div>
+
+      <p class="thanks-label">Aanmelding ontvangen</p>
+
+      <h1 class="thanks-title">Tof dat<br/>je erbij<br/>bent.</h1>
+
+      <div class="divider"></div>
+
+      <p class="thanks-sub">
+        We hebben je aanmelding voor BUITEN ontvangen.
+      </p>
+      <p class="thanks-text">
+        We nemen zo snel mogelijk contact met je op via je e-mailadres of telefoonnummer.
+        Houd je inbox in de gaten — en vergeet niet je spamfolder te checken.
+      </p>
+
+      <!-- Info blokjes -->
+      <div class="info-grid">
+        <div class="info-item">
+          <i class="fa-solid fa-calendar-days"></i>
+          <p class="info-item-title">Eerste workshop</p>
+          <p class="info-item-value">Woensdag 6 mei<br/>18:30 – 21:00 uur</p>
+        </div>
+        <div class="info-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <p class="info-item-title">Locatie</p>
+          <p class="info-item-value">Rotterdam<br/>Adres volgt via mail</p>
+        </div>
+        <div class="info-item">
+          <i class="fa-solid fa-envelope"></i>
+          <p class="info-item-title">Vragen?</p>
+          <p class="info-item-value"><a href="mailto:info@buitendefilm.nl" style="color:#DAFF0F;">info@buitendefilm.nl</a></p>
+        </div>
+        <div class="info-item">
+          <i class="fa-brands fa-instagram"></i>
+          <p class="info-item-title">Volg ons</p>
+          <p class="info-item-value"><a href="https://instagram.com/buitendefilm" target="_blank" style="color:#DAFF0F;">@buitendefilm</a></p>
+        </div>
+      </div>
+
+      <div class="btn-group">
+        <a href="index.html" class="btn btn--primary">
+          <i class="fa-solid fa-arrow-left"></i>
+          Terug naar de site
+        </a>
+        <a href="https://instagram.com/buitendefilm" target="_blank" class="btn btn--ghost">
+          <i class="fa-brands fa-instagram"></i>
+          Volg @buitendefilm
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 BUITEN – De Film · Regie: Alexa Hakkenbrak · <a href="mailto:info@buitendefilm.nl">info@buitendefilm.nl</a></p>
+  </footer>
+
+</body>
+</html>
