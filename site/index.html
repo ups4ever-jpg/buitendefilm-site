@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="BUITEN – De nieuwe Rotterdamse korte film van Alexa Hakkenbrak. Een rauwe korte film over vrijheid, trauma en opnieuw beginnen. Meld je aan voor de gratis acteerworkshops." />
+  <title>BUITEN – De Film van Alexa Hakkenbrak</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════
+       NAVIGATIE
+  ═══════════════════════════════════════ -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#home" class="nav__logo">BUITEN</a>
+      <button class="nav__toggle" id="navToggle" aria-label="Menu openen">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__menu" id="navMenu">
+        <li><a href="#home" class="nav__link">Home</a></li>
+        <li><a href="#film" class="nav__link">Over de film</a></li>
+        <li><a href="#regisseur" class="nav__link">Regisseur</a></li>
+        <li><a href="#workshops" class="nav__link">Meedoen</a></li>
+        <li><a href="#home" class="nav__link nav__link--accent">Aanmelden</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════
+       HERO — met inline formulier
+  ═══════════════════════════════════════ -->
+  <section class="hero" id="home">
+    <div class="hero__bg">
+      <img src="images/poster.jpg" alt="BUITEN filmsposter" class="hero__poster" />
+      <div class="hero__overlay"></div>
+    </div>
+
+    <div class="hero__inner fade-in">
+
+      <!-- Links: filminfo -->
+      <div class="hero__left">
+        <p class="hero__label">Rotterdam · Korte film · 2026</p>
+        <h1 class="hero__title">BUITEN</h1>
+        <div class="hero__title-line"></div>
+        <p class="hero__tagline">
+          Vrij zijn is moeilijker<br/>als je in jezelf vastzit.
+        </p>
+        <p class="hero__desc">
+          Een rauwe Rotterdamse korte film over vrijheid, trauma en opnieuw beginnen.
+          Doe mee en schrijf je direct in voor de workshop!
+        </p>
+        <div class="hero__scroll-hint">
+          <a href="#film" class="hero__scroll-link">
+            <i class="fa-solid fa-chevron-down"></i>
+            Lees meer over de film
+          </a>
+        </div>
+      </div>
+
+      <!-- Rechts: inline formulier -->
+      <div class="hero__right">
+        <div class="hero__form-box">
+          <h2 class="hero__form-title">Meld je aan</h2>
+          <p class="hero__form-sub">Speel mee in de korte film of doe mee aan een gratis acteerworkshop.</p>
+
+          <form class="form form--hero" id="signupForm" novalidate>
+
+            <div class="form__row">
+              <div class="form__group">
+                <label for="naam" class="form__label">Voornaam</label>
+                <input type="text" id="naam" name="naam" class="form__input" placeholder="Voornaam" required />
+              </div>
+              <div class="form__group">
+                <label for="achternaam" class="form__label">Achternaam</label>
+                <input type="text" id="achternaam" name="achternaam" class="form__input" placeholder="Achternaam" required />
+              </div>
+            </div>
+
+            <div class="form__row">
+              <div class="form__group">
+                <label for="leeftijd" class="form__label">Leeftijd</label>
+                <input type="number" id="leeftijd" name="leeftijd" class="form__input" placeholder="Leeftijd" min="16" max="50" required />
+              </div>
+              <div class="form__group">
+                <label for="woonplaats" class="form__label">Woonplaats</label>
+                <input type="text" id="woonplaats" name="woonplaats" class="form__input" placeholder="Woonplaats" required />
+              </div>
+            </div>
+
+            <div class="form__group">
+              <label for="email" class="form__label">E-mailadres</label>
+              <input type="email" id="email" name="email" class="form__input" placeholder="jouw@email.nl" required />
+            </div>
+
+            <div class="form__group">
+              <label for="telefoon" class="form__label">Telefoonnummer</label>
+              <input type="tel" id="telefoon" name="telefoon" class="form__input" placeholder="06 – 12345678" required />
+            </div>
+
+            <div class="form__group" id="datumCheckGroup">
+              <label class="form__label">Ik wil meedoen aan <span style="color:var(--clr-accent)">*</span></label>
+              <p class="form__check-hint">Meerdere data mogelijk — kies wat bij je past</p>
+              <div class="form__checks">
+                <label class="form__check">
+                  <input type="checkbox" name="datum_6mei" value="Wo 6 mei – Camera acteren (Uriah Arnhem)" class="form__checkbox" />
+                  <span class="form__check-box"></span>
+                  <span class="form__check-label">
+                    <strong>Wo 6 mei</strong> — Camera acteren
+                    <em>met Uriah Arnhem</em>
+                  </span>
+                </label>
+                <label class="form__check">
+                  <input type="checkbox" name="datum_13mei" value="Wo 13 mei – Tekst voor de camera (Zouhair Mtazi)" class="form__checkbox" />
+                  <span class="form__check-box"></span>
+                  <span class="form__check-label">
+                    <strong>Wo 13 mei</strong> — Tekst voor de camera
+                    <em>met Zouhair Mtazi</em>
+                  </span>
+                </label>
+                <label class="form__check">
+                  <input type="checkbox" name="datum_20mei" value="Wo 20 mei – Inleven in je karakter (Hamda Belgaroui)" class="form__checkbox" />
+                  <span class="form__check-box"></span>
+                  <span class="form__check-label">
+                    <strong>Wo 20 mei</strong> — Inleven in je karakter
+                    <em>met Hamda Belgaroui</em>
+                  </span>
+                </label>
+                <label class="form__check">
+                  <input type="checkbox" name="datum_28mei" value="Do 28 mei – Auditie (Ted Heil &amp; Uriah Arnhem)" class="form__checkbox" />
+                  <span class="form__check-box"></span>
+                  <span class="form__check-label">
+                    <strong>Do 28 mei</strong> — Auditie
+                    <em>met Ted Heil &amp; Uriah Arnhem</em>
+                  </span>
+                </label>
+              </div>
+              <span class="form__error-msg" id="datumError">Kies minimaal één datum</span>
+            </div>
+
+            <div class="form__group">
+              <label for="socialmedia" class="form__label">Social media <span class="form__label-opt">(optioneel)</span></label>
+              <input type="text" id="socialmedia" name="socialmedia" class="form__input" placeholder="Instagram, TikTok of andere link — @gebruikersnaam of URL" />
+              <span class="form__label-hint">Zo kunnen we zien wie je bent voor we contact opnemen</span>
+            </div>
+
+            <div class="form__group">
+              <label for="bio" class="form__label">Vertel iets over jezelf</label>
+              <textarea id="bio" name="bio" class="form__textarea" rows="4" placeholder="Wie ben jij? Wat doe je nu? Waarom wil je meedoen?" required></textarea>
+              <span class="form__error-msg">Vertel ons iets over jezelf</span>
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--full" id="submitBtn">
+              <span class="btn__text">Verstuur aanmelding</span>
+              <span class="btn__loading" style="display:none"><i class="fa-solid fa-spinner fa-spin"></i> Bezig…</span>
+            </button>
+
+            <p class="form__footnote">
+              Of mail naar <a href="mailto:info@buitendefilm.nl">info@buitendefilm.nl</a>
+              · Workshops zijn gratis · Vol = vol
+            </p>
+
+          </form>
+
+          <!-- Succes bericht -->
+          <div class="form__success" id="formSuccess" style="display:none">
+            <i class="fa-solid fa-circle-check form__success-icon"></i>
+            <h3 class="form__success-title">Aanmelding ontvangen!</h3>
+            <p class="form__success-text">
+              Tof dat je je hebt aangemeld voor BUITEN.<br/>
+              We nemen snel contact met je op.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <a href="#film" class="hero__scroll-arrow" aria-label="Scroll naar beneden">
+      <i class="fa-solid fa-chevron-down"></i>
+    </a>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       OVER DE FILM
+  ═══════════════════════════════════════ -->
+  <section class="film" id="film">
+    <div class="container">
+      <div class="film__grid">
+
+        <div class="film__text reveal">
+          <span class="section-label">Over de film</span>
+          <h2 class="section-title">Wat er overblijft.</h2>
+          <span class="film__format-tag">Korte film</span>
+          <p class="film__synopsis">
+            Na zijn vrijlating probeert een 21-jarige jongen zijn leven opnieuw op te bouwen.
+            Hij wil het goed doen, maar het systeem, de straat en zijn eigen hoofd maken dat bijna onmogelijk.
+          </p>
+          <p class="film__body">
+            Schulden, druk van zijn familie en oude vrienden die trekken. Op het moment dat hij iets moois lijkt te vinden, breekt alles toch.
+          </p>
+          <p class="film__statement">
+            BUITEN is geen film over criminaliteit.<br/>
+            <em>Het is een film over wat er overblijft als je probeert te veranderen, maar je geen kans krijgt.</em>
+          </p>
+
+          <div class="film__credits">
+            <div class="film__credit-item">
+              <span class="film__credit-label">Regie</span>
+              <span class="film__credit-value">Alexa Hakkenbrak</span>
+            </div>
+            <div class="film__credit-item">
+              <span class="film__credit-label">DOP</span>
+              <span class="film__credit-value">Ted Heil</span>
+            </div>
+            <div class="film__credit-item">
+              <span class="film__credit-label">Uitvoerend Producent</span>
+              <span class="film__credit-value">Uriah Paul-Simon</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="film__visual reveal reveal--delay">
+          <div class="film__poster-wrap">
+            <img src="images/poster.jpg" alt="BUITEN – filmsposter" class="film__poster-img" />
+            <div class="film__poster-glow"></div>
+          </div>
+          <!-- Set foto -->
+          <div class="film__set-wrap">
+            <img src="images/set-foto.jpg" alt="Op de set van BUITEN" class="film__set-img" />
+            <p class="film__set-caption">Op de set van BUITEN</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       ALEXA HAKKENBRAK – Regisseur
+  ═══════════════════════════════════════ -->
+  <section class="alexa" id="regisseur">
+    <div class="container">
+      <div class="alexa__grid">
+
+        <div class="alexa__photo-col reveal">
+          <div class="alexa__photo-wrap">
+            <img src="images/alexa-hakkenbrak.jpg" alt="Alexa Hakkenbrak – regisseur" class="alexa__photo" />
+            <div class="alexa__photo-overlay"></div>
+          </div>
+          <div class="alexa__photo-credit">
+            <span class="section-label" style="margin:0;">Regie</span>
+            <p class="alexa__photo-name">Alexa Hakkenbrak</p>
+          </div>
+        </div>
+
+        <div class="alexa__text reveal reveal--delay">
+          <span class="section-label">De regisseur</span>
+          <h2 class="section-title">Alexa<br/>Hakkenbrak</h2>
+
+          <p class="alexa__bio">
+            Alexa is een Rotterdamse regisseur en podiumkunstenaar. Als filmmaker maakt ze verhalen die dicht op de huid zitten en de spanning laten zien tussen mensen en de systemen waarin zij leven.
+          </p>
+          <p class="alexa__bio">
+            Ze studeerde af aan de Rockacademie en begon haar carrière als uitvoerend artiest, waarmee ze in binnen- en buitenland optrad. Die ervaring gaf haar een sterk gevoel voor ritme, timing en aanwezigheid.
+          </p>
+          <p class="alexa__bio">
+            Vanuit haar werk in de jeugdgevangenis en jeugdzorg ontwikkelde ze een scherp oog voor kwetsbaarheid, macht en menselijkheid. In haar films zoekt ze naar echtheid en verbinding, en creërt ze ruimte voor stemmen die niet altijd gehoord worden.
+          </p>
+
+          <div class="alexa__note">
+            <div class="alexa__note-header">
+              <i class="fa-solid fa-quote-left"></i>
+              <span>Director's Note</span>
+            </div>
+            <blockquote class="alexa__quote">
+              "Ik wilde een film maken voor de mensen in mijn stad. Niet over hen, maar samen met hen. BUITEN gaat over het gevoel vast te zitten, zelfs wanneer de deuren openstaan. Het is een film over opnieuw beginnen en hoe moeilijk dat is wanneer niemand je een echte kans geeft."
+            </blockquote>
+            <p class="alexa__quote-cont">
+              "Ik heb bewust gekozen voor echte mensen, echte locaties en echte verhalen, omdat ik geloof dat film pas echt kracht heeft wanneer het voelt als herkenning."
+            </p>
+            <p class="alexa__quote-attr">— Alexa Hakkenbrak, regisseur</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       VISUELE SFEER / STILLS (echte foto's)
+  ═══════════════════════════════════════ -->
+  <section class="stills" id="stills">
+    <div class="container">
+      <div class="stills__header reveal">
+        <span class="section-label">Sfeer</span>
+        <h2 class="section-title">Rotterdam. Rauw. Echt.</h2>
+        <p class="stills__subtext">Gefilmd op locatie in Rotterdam. Echte mensen, echte plekken, echte verhalen.</p>
+      </div>
+
+      <div class="stills__grid">
+
+        <div class="polaroid polaroid--1 reveal">
+          <div class="polaroid__frame">
+            <img src="images/still4.jpg" alt="Close-up van een jonge man in hoodie" class="polaroid__photo" />
+            <p class="polaroid__caption">Ogen die alles zeggen</p>
+          </div>
+        </div>
+
+        <div class="polaroid polaroid--2 reveal reveal--delay">
+          <div class="polaroid__frame">
+            <img src="images/still5.jpg" alt="Jonge man - zijprofiel" class="polaroid__photo" />
+            <p class="polaroid__caption">Buiten kijken. Naar binnen denken.</p>
+          </div>
+        </div>
+
+        <div class="polaroid polaroid--3 reveal reveal--delay2">
+          <div class="polaroid__frame">
+            <img src="images/still3.jpg" alt="Jonge vrouw in gedachten" class="polaroid__photo" />
+            <p class="polaroid__caption">Stilte voor de storm</p>
+          </div>
+        </div>
+
+        <div class="polaroid polaroid--4 reveal reveal--delay">
+          <div class="polaroid__frame">
+            <img src="images/still1.jpg" alt="Vrienden bij elkaar" class="polaroid__photo" />
+            <p class="polaroid__caption">Thuis bij elkaar</p>
+          </div>
+        </div>
+
+        <div class="polaroid polaroid--5 reveal reveal--delay2">
+          <div class="polaroid__frame">
+            <img src="images/still2.jpg" alt="Jongens aan tafel" class="polaroid__photo" />
+            <p class="polaroid__caption">Straat, eten, overleven</p>
+          </div>
+        </div>
+
+        <div class="polaroid polaroid--6 reveal">
+          <div class="polaroid__frame">
+            <img src="images/still7.jpg" alt="Rotterdam wijk" class="polaroid__photo" />
+            <p class="polaroid__caption">Rotterdam ademt</p>
+          </div>
+        </div>
+
+        <div class="polaroid polaroid--7 reveal reveal--delay">
+          <div class="polaroid__frame">
+            <img src="images/still6.jpg" alt="Stalen constructie" class="polaroid__photo" />
+            <p class="polaroid__caption">Structuur. Kooi. Kracht.</p>
+          </div>
+        </div>
+
+        <div class="polaroid polaroid--8 reveal reveal--delay2">
+          <div class="polaroid__frame">
+            <img src="images/still9.jpg" alt="Jongeman portret" class="polaroid__photo" />
+            <p class="polaroid__caption">Vrijheid heeft een prijs</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       WORKSHOPS / CASTING
+  ═══════════════════════════════════════ -->
+  <section class="workshops" id="workshops">
+    <div class="workshops__bg-accent"></div>
+    <div class="container">
+
+      <div class="workshops__header reveal">
+        <span class="section-label">Meedoen</span>
+        <h2 class="section-title">Speel mee in BUITEN.</h2>
+        <p class="workshops__intro">
+          Wil jij deze zomer meespelen in de nieuwe Rotterdamse <strong>korte film</strong> <strong>BUITEN</strong>?
+          Ben jij tussen de <strong>18 en 28 jaar</strong>? Dan kun je meedoen aan onze <strong>gratis acteerworkshops</strong>.
+        </p>
+      </div>
+
+      <div class="workshops__content">
+
+        <div class="workshops__info reveal">
+          <div class="workshops__bullets">
+            <div class="workshops__bullet">
+              <i class="fa-solid fa-check"></i>
+              <span>Gratis workshops</span>
+            </div>
+            <div class="workshops__bullet">
+              <i class="fa-solid fa-check"></i>
+              <span>Geen acteerervaring nodig</span>
+            </div>
+            <div class="workshops__bullet">
+              <i class="fa-solid fa-check"></i>
+              <span>Motivatie is belangrijker dan ervaring</span>
+            </div>
+            <div class="workshops__bullet">
+              <i class="fa-solid fa-check"></i>
+              <span>Rotterdam · Aanmelden is verplicht · Vol = vol</span>
+            </div>
+          </div>
+
+          <div class="workshops__note">
+            <p>
+              Tijdens alle workshops leer je van professionele acteurs hoe je voor de camera acteert.
+              Je mag ook meedoen als je nog niet zeker weet of je in de film wilt spelen.
+            </p>
+            <p style="margin-top:0.8rem;">
+              Word je geselecteerd, dan krijg je <strong>betaald</strong> voor de repetities en de draaidagen.
+              Er is ook een <strong>leerplek beschikbaar voor achter de schermen</strong>, dus niet in beeld.
+            </p>
+          </div>
+
+          <a href="#home" class="btn btn--primary workshops__cta">Direct aanmelden ↑</a>
+        </div>
+
+        <div class="workshops__schedule reveal reveal--delay">
+          <h3 class="workshops__schedule-title">Workshopdata</h3>
+
+          <div class="schedule">
+            <div class="schedule__item">
+              <div class="schedule__date">
+                <span class="schedule__day">Wo</span>
+                <span class="schedule__num">6</span>
+                <span class="schedule__month">Mei</span>
+              </div>
+              <div class="schedule__info">
+                <p class="schedule__workshop">Camera acteren</p>
+                <p class="schedule__teacher">Uriah Arnhem</p>
+              </div>
+              <span class="schedule__time">18:30</span>
+            </div>
+
+            <div class="schedule__item">
+              <div class="schedule__date">
+                <span class="schedule__day">Wo</span>
+                <span class="schedule__num">13</span>
+                <span class="schedule__month">Mei</span>
+              </div>
+              <div class="schedule__info">
+                <p class="schedule__workshop">Tekst voor de camera</p>
+                <p class="schedule__teacher">Zouhair Mtazi</p>
+              </div>
+              <span class="schedule__time">18:30</span>
+            </div>
+
+            <div class="schedule__item">
+              <div class="schedule__date">
+                <span class="schedule__day">Wo</span>
+                <span class="schedule__num">20</span>
+                <span class="schedule__month">Mei</span>
+              </div>
+              <div class="schedule__info">
+                <p class="schedule__workshop">Inleven in je karakter</p>
+                <p class="schedule__teacher">Hamda Belgaroui</p>
+              </div>
+              <span class="schedule__time">18:30</span>
+            </div>
+
+            <div class="schedule__item schedule__item--accent">
+              <div class="schedule__date">
+                <span class="schedule__day">Do</span>
+                <span class="schedule__num">28</span>
+                <span class="schedule__month">Mei</span>
+              </div>
+              <div class="schedule__info">
+                <p class="schedule__workshop">Auditie</p>
+                <p class="schedule__teacher">Ted Heil &amp; Uriah Arnhem</p>
+              </div>
+              <span class="schedule__time">18:30</span>
+            </div>
+          </div>
+
+          <p class="schedule__footer">Alle sessies van <strong>18:30 – 21:00 uur</strong></p>
+        </div>
+
+      </div>
+
+      <!-- ─── Docenten kaarten ──────────────────── -->
+      <div class="docenten reveal">
+        <h3 class="docenten__title">De workshopleiders</h3>
+        <p class="docenten__sub">Leer van professionals met bewezen track records op het Nederlandse scherm.</p>
+
+        <div class="docenten__grid">
+
+          <div class="docent reveal">
+            <div class="docent__photo-wrap">
+              <img src="images/uriah-arnhem.jpg" alt="Uriah Arnhem – acteur" class="docent__photo" />
+            </div>
+            <div class="docent__info">
+              <h4 class="docent__name">Uriah Arnhem</h4>
+              <p class="docent__role">Acteur &amp; workshopleider</p>
+              <p class="docent__known">Bekend van <span>Popoz</span> (Videoland), <span>Fuck de Liefde</span> (Videoland) en <span>Jackpot</span></p>
+              <p class="docent__date"><i class="fa-solid fa-calendar-days"></i> Wo 6 mei + Do 28 mei (auditie)</p>
+              <div class="docent__socials">
+                <a href="https://www.imdb.com/name/nm4005380/" target="_blank" rel="noopener" class="docent__social" aria-label="IMDb Uriah Arnhem"><i class="fa-solid fa-film"></i> IMDb</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="docent reveal reveal--delay">
+            <div class="docent__photo-wrap">
+              <img src="images/zouhair-mtazi.jpg" alt="Zouhair Mtazi – acteur" class="docent__photo" />
+            </div>
+            <div class="docent__info">
+              <h4 class="docent__name">Zouhair Mtazi</h4>
+              <p class="docent__role">Acteur &amp; workshopleider</p>
+              <p class="docent__known">Bekend van <span>Mocro Maffia</span> (Videoland) en <span>De Vuurlinie</span> (NTR/NPO)</p>
+              <p class="docent__date"><i class="fa-solid fa-calendar-days"></i> Wo 13 mei</p>
+              <div class="docent__socials">
+                <a href="https://www.imdb.com/name/nm5783226/" target="_blank" rel="noopener" class="docent__social" aria-label="IMDb Zouhair Mtazi"><i class="fa-solid fa-film"></i> IMDb</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="docent reveal reveal--delay2">
+            <div class="docent__photo-wrap">
+              <img src="images/hamda-belgaroui.jpg" alt="Hamda Belgaroui – acteur" class="docent__photo" />
+            </div>
+            <div class="docent__info">
+              <h4 class="docent__name">Hamda Belgaroui</h4>
+              <p class="docent__role">Acteur &amp; workshopleider</p>
+              <p class="docent__known">Bekend van <span>Mocro Maffia</span> (Videoland) en <span>De Toeslagenaffaire</span> (BNNVARA/NPO)</p>
+              <p class="docent__date"><i class="fa-solid fa-calendar-days"></i> Wo 20 mei</p>
+              <div class="docent__socials">
+                <a href="https://www.imdb.com/name/nm5294580/" target="_blank" rel="noopener" class="docent__social" aria-label="IMDb Hamda Belgaroui"><i class="fa-solid fa-film"></i> IMDb</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="docent reveal">
+            <div class="docent__photo-wrap">
+              <img src="images/ted-heil.jpg" alt="Ted Heil – cameraman" class="docent__photo" />
+            </div>
+            <div class="docent__info">
+              <h4 class="docent__name">Ted Heil</h4>
+              <p class="docent__role">Cameraman &amp; auditie-begeleider</p>
+              <p class="docent__known">Bekend van diverse Nederlandse <span>film- en tv-producties</span></p>
+              <p class="docent__date"><i class="fa-solid fa-calendar-days"></i> Do 28 mei (auditie)</p>
+              <div class="docent__socials">
+                <a href="https://www.imdb.com/name/nm3458732/" target="_blank" rel="noopener" class="docent__social" aria-label="IMDb Ted Heil"><i class="fa-solid fa-film"></i> IMDb</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer__grid">
+
+        <div class="footer__brand">
+          <p class="footer__title">BUITEN</p>
+          <p class="footer__subtitle">De Film</p>
+          <p class="footer__tagline">Een rauwe Rotterdamse korte film.</p>
+        </div>
+
+        <div class="footer__credits">
+          <h4 class="footer__col-title">Credits</h4>
+          <ul class="footer__list">
+            <li><span>Regie</span> Alexa Hakkenbrak</li>
+            <li><span>DOP</span> Ted Heil</li>
+            <li><span>Uitvoerend Producent</span> Uriah Paul-Simon</li>
+          </ul>
+        </div>
+
+        <div class="footer__contact">
+          <h4 class="footer__col-title">Contact</h4>
+          <a href="mailto:info@buitendefilm.nl" class="footer__email">
+            <i class="fa-solid fa-envelope"></i>
+            info@buitendefilm.nl
+          </a>
+          <a href="https://instagram.com/buitendefilm" class="footer__social" target="_blank" rel="noopener">
+            <i class="fa-brands fa-instagram"></i>
+            @buitendefilm
+          </a>
+          <p class="footer__more">Meer info: <a href="https://www.buitendefilm.nl">www.buitendefilm.nl</a></p>
+        </div>
+
+      </div>
+
+      <!-- Sponsoren -->
+      <div class="footer__sponsors">
+        <p class="footer__sponsors-label">Mogelijk gemaakt door</p>
+        <div class="footer__sponsors-grid">
+          <a href="https://www.cultuurfonds.nl/" target="_blank" rel="noopener" class="footer__sponsor-link">
+            <img src="images/logo-cultuurfonds.png" alt="Het Cultuurfonds" class="footer__sponsor-logo" />
+          </a>
+          <a href="https://www.maakimpact.co/" target="_blank" rel="noopener" class="footer__sponsor-link footer__sponsor-link--impact">
+            <img src="images/logo-impact.png" alt="Impact" class="footer__sponsor-logo footer__sponsor-logo--impact" />
+          </a>
+          <a href="https://openrotterdam.nl/" target="_blank" rel="noopener" class="footer__sponsor-link">
+            <img src="images/logo-3.png" alt="Open Rotterdam" class="footer__sponsor-logo" />
+          </a>
+          <a href="https://youngperspectives.org/" target="_blank" rel="noopener" class="footer__sponsor-link">
+            <img src="images/logo-youngperspectives.png" alt="Young Perspectives" class="footer__sponsor-logo" />
+          </a>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>© 2026 BUITEN – De Film · Alexa Hakkenbrak · Rotterdam</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
